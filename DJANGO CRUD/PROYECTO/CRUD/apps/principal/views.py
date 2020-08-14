@@ -32,6 +32,7 @@ def editarPersona(request,id):
         }
     else:
         form = Personaform(request.POST, instance= persona)
+        
         if form.is_valid():
             form.save()
             contexto = {
