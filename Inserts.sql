@@ -23,3 +23,6 @@ INSERT INTO principal_tipodocumento (nombre,descripcion) VALUES ('CC','Cedula de
                                                       ('TI','Tarjeta de identidad'),
 					              ('CE','Cedula extranjera'),
 ('RC','Registro Civil');
+
+
+SELECT * FROM principal_persona

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <title>Listado de Contacto</title>
+</head>
+
+<body>
+    {% block body %}
+    <table class="table">
+    <thead>
+        <tr>
+            <th>Nombres</th>
+            <th>Apellidos</th>
+            <th>Tipo de documento</th>
+            <th>#Documento</th>
+            <th>Lugar de residencia</th>
+            <th>Fecha de nacimiento</th>
+            <th>Email</th>
+            <th>Telefono</th>
+            <th>Usuario</th>
+            <th>Opción</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for persona in personas %}
+        <tr>
+            <td>{{ persona.nombres }}</td>
+            <td>{{ persona.apellidos }}</td>
+            <td>{{ persona.idTipoDocumento }}</td>
+            <td>{{ persona.documento }}</td>
+            <td>{{ persona.lugarResidencia }}</td>
+            <td>{{ persona.fechaNacimiento }}</td>
+            <td>{{ persona.email }}</td>
+            <td>{{ persona.telefono }}</td>
+            <td>{{ persona.usuario }}</td>
+            <td><a href="{% url 'editar_persona' persona.idPersona %}">EDITAR</a> <a href="{% url 'eliminar_persona' persona.idPersona %}">ELIMINAR</a></td>
+
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<div>
+<form action="crear_persona">
+<button type="submit" class="btn btn-primary" style="margin: 20px;">CREAR NUEVA PERSONA</button>
+</form>
+</div>
+</div>
+</form>
+{% endblock%}
+</body>
+
+</html>
