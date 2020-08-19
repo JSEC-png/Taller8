@@ -23,7 +23,7 @@ class Persona(models.Model):
      apellidos = models.CharField(max_length=120, null=True)
      idTipoDocumento = models.ForeignKey(TipoDocumento,db_column='idTipoDocumento',on_delete=models.RESTRICT,null=True)
      documento = models.CharField(max_length=10,null=True)
-     lugarResidencia = models.ForeignKey(Ciudad, db_column='idCiudad' ,blank=True, on_delete=models.RESTRICT,null=True)
+     lugarResidencia = models.ForeignKey(Ciudad, db_column='idCiudad', on_delete=models.RESTRICT,null=True)
      fechaNacimiento = models.DateField(null=True)
      email = models.EmailField(max_length=100,null=True)
      telefono =models.CharField(max_length=20,null=True)

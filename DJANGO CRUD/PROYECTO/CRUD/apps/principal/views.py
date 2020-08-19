@@ -12,13 +12,13 @@ def index(request):
 def crearPersona(request):
     if request.method == 'GET':
         form = Personaform()
+        print(form.errors.as_data())
     else:
         form = Personaform(request.POST)
         if form.is_valid():
             form.save()
             return redirect('index')
         else:
-            print('NO PUEDE SER')
             print(form.errors.as_data())
             return redirect('index')
     return render(request,'crear_persona.html',{'form':form})

@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from apps.principal.views import index,crearPersona,editarPersona,eliminarPersona
 from apps.principal.class_view import PersonaList,PersonaCreate
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',index, name = 'index'), #Sin usar Clases:  path('',index, name = 'index')
@@ -24,3 +26,4 @@ urlpatterns = [
     path('editar_persona/<int:id>/',editarPersona,name = 'editar_persona'),
     path('eliminar_persona/<int:id>',eliminarPersona, name ='eliminar_persona')
 ]
+urlpatterns += staticfiles_urlpatterns()
