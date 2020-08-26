@@ -9,4 +9,17 @@ $(document).ready(function () {
         }
         
     });
+
+    console.log('Hola');
+
+    $('#email').blur(function () { 
+        
+        if ( $('#email').val().match(/\.+[a-z]/) == null )
+        {
+            window.alert('El email debe contener .com,.es,.co, etc');
+    
+        }
+    
+    });
+
 });
